@@ -126,11 +126,15 @@
 
 
 
+@section('js')
   <!-- Libraries -->
   {{ HTML::script('js/lib/jquery-3.2.1.min.js') }}
   {{ HTML::script('js/lib/jquery-ui.min.js') }}
   {{ HTML::script('js/lib/materialize.min.js') }}
   <!--  Scripts-->
   {{ HTML::script('js/adminhome/init.js') }}
+@stop
+
+@yield('js')
   </body>
 </html>

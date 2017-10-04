@@ -232,6 +232,7 @@ return [
         'HTML'  => 'Collective\Html\HtmlFacade',
         'Grids'     => 'Nayjest\Grids\Grids',
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Input' => 'Illuminate\Support\Facades\Input',
 
     ],
 
