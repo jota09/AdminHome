@@ -166,6 +166,7 @@ return [
         'Nayjest\Grids\ServiceProvider',
         'Collective\Html\HtmlServiceProvider',
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Zofe\Rapyd\RapydServiceProvider::class,
 
         /*
          * Package Service Providers...

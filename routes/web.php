@@ -23,5 +23,6 @@ Route::get('/logout', function () {
 Auth::routes();
 // Nos indica que las rutas que est�n dentro de �l s�lo ser�n mostradas si antes el usuario se ha autenticado.
 Route::group(array('before' => 'auth'), function(){
-    Route::get('/home', 'HomeController@index')->name('home');  //Route::Controller / debe ir al final
+  Route::get('/usuarios', 'UserController@index')->name('user');  //Route::Controller / debe ir al final
+  Route::get('/home', 'HomeController@index')->name('home');  //Route::Controller / debe ir al final
 });
