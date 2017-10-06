@@ -22,29 +22,24 @@
 <body>
   <header>
     <ul id="listaLogueado" class="dropdown-content">
-      <li><a href="{{ url('/home') }}">Pagina principal</a></li>
+      <li><a href="{{ url('/') }}">{{Lang::get("app.start")}}</a></li>
       <li class="divider"></li>
-      <li><a href="{{ url('/usuarios') }}">Visualizar usuarios</a></li>
+      <li><a href="{{ url('/home') }}">{{Lang::get("app.home")}}</a></li>
       <li class="divider"></li>
-      <li><a href="{{ url('/logout') }}">Cerrar Sesión</a></li>
+      <li><a href="{{ url('/usuarios') }}">{{Lang::get("app.view_user")}}</a></li>
+      <li class="divider"></li>
+      <li><a href="{{ url('/logout') }}">{{Lang::get("app.logout")}}</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
         <div class="col s4 m2">
-        <a href="{{ url('/home') }}"  class="brand-logo right" style="height: 100%;"><img class="circle responsive-img" src="https://cdn1.iconfinder.com/data/icons/simple-icons/128/laravel-128-black.png" style="width: 63px;"></a>
+        <a href="{{ url('/home') }}" class="brand-logo right" style="height: 100%;"><img class="responsive-img" src="images/logo.png" style="width: 91px;"></a>
         </div>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           @if (Route::has('login'))
             <div class="top-right links">
             @auth
-              <li style="width: 200px;"><a class="dropdown-button" href="#!" data-activates="listaLogueado" style="text-align: center;">Home<i class="material-icons right">arrow_drop_down</i></a></li>
-            @else
-              <li><a href="{{ url('/') }}">Welcome</a></li>
-              @if (\Request::is('register'))
-                <li><a href="{{ route('login') }}">Login</a></li>
-              @else
-                <li><a href="{{ route('register') }}">Register</a></li>
-              @endif
+              <li style="width: 200px;"><a class="dropdown-button" href="#!" data-activates="listaLogueado" style="text-align: center;">{{Lang::get("app.menu")}}<i class="material-icons right">arrow_drop_down</i></a></li>
             @endauth
             </div>
           @endif
@@ -72,22 +67,23 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">{{Lang::get("welcome.namecomp")}}</h5>
+          <p class="grey-text text-lighten-4">{{Lang::get("welcome.descrpcomp")}}.</p>
 
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="white-text">{{Lang::get("app.language")}}</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            @foreach (Config::get('languages') as $lang => $language)
+                <li>
+                  <a class="white-text" href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
+                </li>
+            @endforeach
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5 class="white-text">{{Lang::get("welcome.connect")}}</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
@@ -99,7 +95,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by Jota
+          {{Lang::get("welcome.madeby")}} {{Lang::get("welcome.autor")}}
       </div>
     </div>
   </footer>

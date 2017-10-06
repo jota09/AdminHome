@@ -6,8 +6,8 @@
   </div>
   <div class="section white">
     <div class="row container">
-      <h2 class="header center-align">AdminHome</h2>
-      <p class="grey-text text-darken-3 lighten-3 center-align flow-text">Bienvenidos a la nueva forma de administrar tu recursos.</p>
+      <h2 class="header center-align">{{Lang::get("app.namecomp")}}</h2>
+      <p class="grey-text text-darken-3 lighten-3 center-align flow-text">{{Lang::get("app.descrpcomp2")}}.</p>
     </div>
   </div>
   <div class="parallax-container">

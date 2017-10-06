@@ -18,23 +18,27 @@
 <body>
   <header>
   <ul id="listaLogueado" class="dropdown-content">
-  <li><a href="{{ url('/home') }}">Visualizar usuarios</a></li>
+  <li><a href="{{ url('/') }}">{{Lang::get("welcome.start")}}</a></li>
   <li class="divider"></li>
-  <li><a href="{{ url('/logout') }}">Cerrar Sesión</a></li>
+  <li><a href="{{ url('/home') }}">{{Lang::get("welcome.home")}}</a></li>
+  <li class="divider"></li>
+  <li><a href="{{ url('/usuarios') }}">{{Lang::get("welcome.view_user")}}</a></li>
+  <li class="divider"></li>
+  <li><a href="{{ url('/logout') }}">{{Lang::get("welcome.logout")}}</a></li>
 </ul>
   <nav>
     <div class="nav-wrapper">
       <div class="col s4 m2">
-        <a href="#" class="brand-logo right" style="height: 100%;"><img class="circle responsive-img" src="https://cdn1.iconfinder.com/data/icons/simple-icons/128/laravel-128-black.png" style="width: 63px;"></a>
+        <a href="{{ url('/') }}" class="brand-logo right" style="height: 100%;"><img class="responsive-img" src="images/logo.png" style="width: 91px;"></a>
       </div>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         @if (Route::has('login'))
           <div class="top-right links">
           @auth
-            <li style="width: 200px;"><a class="dropdown-button" href="#!" data-activates="listaLogueado" style="text-align: center;">Home<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li style="width: 200px;"><a class="dropdown-button" href="#!" data-activates="listaLogueado" style="text-align: center;">{{Lang::get("welcome.menu")}}<i class="material-icons right">arrow_drop_down</i></a></li>
           @else
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
+            <li><a href="{{ route('login') }}">{{Lang::get("welcome.login")}}</a></li>
+            <li><a href="{{ route('register') }}">{{Lang::get("welcome.register")}}</a></li>
           @endauth
           </div>
         @endif
@@ -46,7 +50,7 @@
 
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-       <p class="flow-text"><h1 class="center-align">Welcome AdminHome</h1></p>
+       <p class="flow-text"><h1 class="center-align">{{Lang::get("welcome.welcome")}} {{Lang::get("welcome.namecomp")}}</h1></p>
     </div>
   </div>
 
@@ -58,27 +62,27 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h5 class="center">{{Lang::get("welcome.panel1")}}</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">{{Lang::get("welcome.panel1_descr")}}.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h5 class="center">{{Lang::get("welcome.panel2")}}</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">{{Lang::get("welcome.panel2_descr")}}.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="fa fa-cogs" aria-hidden="true"></i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h5 class="center">{{Lang::get("welcome.panel3")}}</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">{{Lang::get("welcome.panel3_descr")}}.</p>
           </div>
         </div>
       </div>
@@ -91,22 +95,23 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">{{Lang::get("welcome.namecomp")}}</h5>
+          <p class="grey-text text-lighten-4">{{Lang::get("welcome.descrpcomp")}}</p>
 
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="white-text">{{Lang::get("welcome.language")}}</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            @foreach (Config::get('languages') as $lang => $language)
+                <li>
+                  <a class="white-text" href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
+                </li>
+            @endforeach
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5 class="white-text">{{Lang::get("welcome.connect")}}</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
@@ -118,7 +123,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by Jota
+        {{Lang::get("welcome.madeby")}} {{Lang::get("welcome.autor")}}
       </div>
     </div>
   </footer>
