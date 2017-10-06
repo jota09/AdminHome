@@ -25,7 +25,7 @@
   <nav>
     <div class="nav-wrapper">
       <div class="col s4 m2">
-      <a href="#" class="brand-logo right" style="height: 100%;"><img class="circle responsive-img" src="https://cdn1.iconfinder.com/data/icons/simple-icons/128/laravel-128-black.png" style="width: 63px;"></a>
+        <a href="#" class="brand-logo right" style="height: 100%;"><img class="circle responsive-img" src="https://cdn1.iconfinder.com/data/icons/simple-icons/128/laravel-128-black.png" style="width: 63px;"></a>
       </div>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         @if (Route::has('login'))
