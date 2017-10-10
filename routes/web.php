@@ -11,15 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::view('/', 'welcome');
 
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
 
 Route::get('/logout', function () {
   Auth::logout();
-  return view('welcome');
+  return redirect('/');
 });
 
 Auth::routes();

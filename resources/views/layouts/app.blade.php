@@ -21,15 +21,7 @@
 </head>
 <body>
   <header>
-    <ul id="listaLogueado" class="dropdown-content">
-      <li><a href="{{ url('/') }}">{{Lang::get("app.start")}}</a></li>
-      <li class="divider"></li>
-      <li><a href="{{ url('/home') }}">{{Lang::get("app.home")}}</a></li>
-      <li class="divider"></li>
-      <li><a href="{{ url('/usuarios') }}">{{Lang::get("app.view_user")}}</a></li>
-      <li class="divider"></li>
-      <li><a href="{{ url('/logout') }}">{{Lang::get("app.logout")}}</a></li>
-    </ul>
+
     <nav>
       <div class="nav-wrapper">
         <div class="col s4 m2">
@@ -39,7 +31,27 @@
           @if (Route::has('login'))
             <div class="top-right links">
             @auth
+              <ul id="listaLogueado" class="dropdown-content">
+                <li><a href="{{ url('/') }}">{{Lang::get("app.start")}}</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ url('/home') }}">{{Lang::get("app.home")}}</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ url('/usuarios') }}">{{Lang::get("app.view_user")}}</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ url('/logout') }}">{{Lang::get("app.logout")}}</a></li>
+              </ul>
               <li style="width: 200px;"><a class="dropdown-button" href="#!" data-activates="listaLogueado" style="text-align: center;">{{Lang::get("app.menu")}}<i class="material-icons right">arrow_drop_down</i></a></li>
+            @else
+              <div class="top-right links">
+                <ul id="listaNoLogueado" class="dropdown-content">
+                  <li><a href="{{ url('/') }}">{{Lang::get("app.start")}}</a></li>
+                  <li class="divider"></li>
+                  <li><a href="{{ route('login') }}">{{Lang::get("welcome.login")}}</a></li>
+                  <li class="divider"></li>
+                  <li><a href="{{ route('register') }}">{{Lang::get("welcome.register")}}</a></li>
+                </ul>
+                <li style="width: 200px;"><a class="dropdown-button" href="#!" data-activates="listaNoLogueado" style="text-align: center;">{{Lang::get("app.menu")}}<i class="material-icons right">arrow_drop_down</i></a></li>
+              </div>
             @endauth
             </div>
           @endif
