@@ -97,10 +97,8 @@
         <div class="col l3 s12">
           <h5 class="white-text">{{Lang::get("welcome.connect")}}</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><div class="col s12" style="padding-left: 0px;"><div class="col s3"><a class="white-text" href="#!"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size: 30px;"></i></a></div><div class="col s3" style="padding-left: 0px;"><a class="white-text" href="#!"><i class="fa fa-twitter-square" aria-hidden="true" style="font-size: 30px;"></i></a></div></div></li>
+            <li><div class="col s12" style="padding-left: 0px;"><div class="col s3"><a class="white-text" href="#!"><i class="fa fa-instagram" aria-hidden="true" style="font-size: 30px;"></i></a></div><div class="col s3" style="padding-left: 0px;"><a class="white-text" href="#!"><i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 30px;"></i></a></div></div></li>
           </ul>
         </div>
       </div>

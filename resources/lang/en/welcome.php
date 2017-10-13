@@ -15,7 +15,7 @@ return [
     'panel1'        => 'Speed up your development',
     'panel1_descr'  => 'Plan your goals easily so you can achieve your dreams',
     'panel2'        => 'Find workmate',
-    'panel2_descr'  => 'You can achieve your goals alone or in a group, adminhome adjusts to your needs and context to achieve the goals you have proposed',
+    'panel2_descr'  => 'You can achieve your goals alone or in a group, adminhome adjusts to your needs and context to achieve your goals',
     'panel3'        => 'Easy to work',
     'panel3_descr'  => 'An interface that facilitates interaction with the system, easy configuration in order to deliver short term results',
     'view_user'     => 'View users',
