@@ -36,6 +36,8 @@
                 <li class="divider"></li>
                 <li><a href="{{ url('/home') }}">{{Lang::get("app.home")}}</a></li>
                 <li class="divider"></li>
+                <li><a href="{{ url('/config') }}">{{Lang::get("app.config")}}</a></li>
+                <li class="divider"></li>
                 <li><a href="{{ url('/usuarios') }}">{{Lang::get("app.view_user")}}</a></li>
                 <li class="divider"></li>
                 <li><a href="{{ url('/logout') }}">{{Lang::get("app.logout")}}</a></li>
@@ -69,10 +71,10 @@
       <i class="large material-icons">mode_edit</i>
     </a>
     <ul>
-      <li><a href="{{ url('/logout') }}" class="btn-floating red"><i class="material-icons">keyboard_return</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-      <li><a href="{{ url('/usuarios') }}" class="btn-floating green"><i class="material-icons">account_circle</i></a></li>
-      <li><a href="{{ url('/home') }}" class="btn-floating yellow darken-1"><i class="material-icons">home</i></a></li>
+      <li><a title='{{Lang::get("app.title_logout")}}' href="{{ url('/logout') }}" class="btn-floating red pulse"><i class="material-icons">keyboard_return</i></a></li>
+      <li><a title='{{Lang::get("app.title_config")}}' href="{{ url('/config') }}" class="btn-floating blue pulse"><i class="fa fa-cogs" aria-hidden="true"></i></a></li>
+      <li><a title='{{Lang::get("app.title_user")}}' href="{{ url('/usuarios') }}" class="btn-floating green pulse"><i class="fa fa-user-o" aria-hidden="true"></i></a></li>
+      <li><a title='{{Lang::get("app.title_home")}}' href="{{ url('/home') }}" class="btn-floating yellow darken-3 pulse"><i class="fa fa-home" aria-hidden="true"></i></a></li>
     </ul>
   </div>
   <footer class="page-footer orange">
@@ -114,6 +116,7 @@
     <!-- Libraries -->
     {{ HTML::script('js/lib/jquery-3.2.1.min.js') }}
     {{ HTML::script('js/lib/jquery-ui.min.js') }}
+    {{ HTML::script('js/lib/jquery.validate.min.js') }}
     {{ HTML::script('js/lib/materialize.min.js') }}
     <!--  Scripts-->
     {{ HTML::script('js/adminhome/init.js') }}

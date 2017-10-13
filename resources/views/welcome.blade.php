@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
-  <title>.:: Admin Home ::.</title>
+  <title>{{ config('app.name', 'Laravel') }}</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,6 +23,8 @@
   <li><a href="{{ url('/home') }}">{{Lang::get("welcome.home")}}</a></li>
   <li class="divider"></li>
   <li><a href="{{ url('/usuarios') }}">{{Lang::get("welcome.view_user")}}</a></li>
+  <li class="divider"></li>
+  <li><a href="{{ url('/config') }}">{{Lang::get("welcome.config")}}</a></li>
   <li class="divider"></li>
   <li><a href="{{ url('/logout') }}">{{Lang::get("welcome.logout")}}</a></li>
 </ul>

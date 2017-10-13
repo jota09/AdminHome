@@ -22,5 +22,6 @@ return [
     'logout'        => 'Cerrar Sesión',
     'menu'          => 'Menú',
     'start'         => 'Inicio',
+    'config'        => 'Configuración',
 
 ];

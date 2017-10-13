@@ -22,5 +22,6 @@ return [
     'logout'        => 'Log out',
     'menu'          => 'Menu',
     'start'         => 'Start',
+    'config'        => 'Configuration',
 
 ];

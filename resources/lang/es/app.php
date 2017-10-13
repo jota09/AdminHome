@@ -15,4 +15,9 @@ return [
     'madeby'        => 'Hecho por',
     'autor'         => 'Jota',
     'connect'       => 'Contacto',
+    'config'        => 'Configuración',
+    'title_logout'  => 'Salir del sistema',
+    'title_config'  => 'Configurar operaciones',
+    'title_user'    => 'Visualizar usuarios',
+    'title_home'    => 'Visualizar pagina principal',
 ];
