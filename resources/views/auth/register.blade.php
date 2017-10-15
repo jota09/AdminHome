@@ -10,8 +10,19 @@
                     <form class="col s12" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
                       <div class="row">
+                        <div class="input-field col s6 {{ $errors->has('name') ? ' has-error' : '' }}">
+                          <input placeholder='{{Lang::get("register.name")}}' id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                            @if ($errors->has('email'))
+                              <span class="help-block">
+                                <strong>{{ $errors->first('name') }}</strong>
+                              </span>
+                            @endif
+                          <label for="name" {{ $errors->has('name') ? 'data-error="wrong"' : 'data-success="right"' }}>{{Lang::get("register.name")}}</label>
+                        </div>
+                      </div>
+                      <div class="row">
                         <div class="input-field col s6 {{ $errors->has('email') ? ' has-error' : '' }}">
-                          <input placeholder='{{Lang::get("register.mail")}}' id="email" name="email" type="email" value="{{ old('email') }}" required autofocus>
+                          <input placeholder='{{Lang::get("register.mail")}}' id="email" name="email" type="email" value="{{ old('email') }}" required>
                             @if ($errors->has('email'))
                               <span class="help-block">
                                 <strong>{{ $errors->first('email') }}</strong>
@@ -34,7 +45,7 @@
 
                       <div class="row">
                         <div class="input-field col s6 {{ $errors->has('password') ? ' has-error' : '' }}">
-                          <input placeholder='{{Lang::get("register.repass")}}' id="password-confirm" name="password-confirm" type="password" required>
+                          <input placeholder='{{Lang::get("register.repass")}}' id="password-confirm" name="password_confirmation" type="password" required>
                             @if ($errors->has('password'))
                               <span class="help-block">
                                 <strong>{{ $errors->first('password') }}</strong>
