@@ -16,7 +16,9 @@
   <!-- Styles -->
   {{ HTML::style('css/lib/jquery-ui.min.css') }}
   {{ HTML::style('css/lib/materialize.min.css') }}
+  {{ HTML::style('css/lib/export.css') }}
   {{ HTML::style('css/adminhome/style.css') }}
+
 
 </head>
 <body>
@@ -118,6 +120,12 @@
     {{ HTML::script('js/lib/jquery-ui.min.js') }}
     {{ HTML::script('js/lib/jquery.validate.min.js') }}
     {{ HTML::script('js/lib/materialize.min.js') }}
+    {{ HTML::script('js/lib/react.js') }}
+    {{ HTML::script('js/lib/react-dom.js') }}
+    {{ HTML::script('js/lib/amcharts/amcharts.js') }}
+    {{ HTML::script('js/lib/amcharts/plugins/export/export.min.js') }}
+    {{ HTML::script('js/lib/amcharts/themes/light.js') }}
+
     <!--  Scripts-->
     {{ HTML::script('js/adminhome/init.js') }}
     <script src="https://use.fontawesome.com/3461617f50.js"></script>

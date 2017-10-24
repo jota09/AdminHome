@@ -12,6 +12,7 @@
   <!-- Styles -->
   {{ HTML::style('css/lib/jquery-ui.min.css') }}
   {{ HTML::style('css/lib/materialize.min.css') }}
+  {{ HTML::style('css/lib/export.css') }}
   {{ HTML::style('css/adminhome/style.css') }}
 
 </head>
@@ -63,27 +64,27 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
+            <!--<h2 class="center light-blue-text"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>-->
+            <div class="chartdiv" id="chartdiv3"></div>
             <h5 class="center">{{Lang::get("welcome.panel1")}}</h5>
-
             <p class="light">{{Lang::get("welcome.panel1_descr")}}.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i></h2>
+            <!--<h2 class="center light-blue-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i></h2>-->
+            <div class="chartdiv" id="chartdiv"></div>
             <h5 class="center">{{Lang::get("welcome.panel2")}}</h5>
-
             <p class="light">{{Lang::get("welcome.panel2_descr")}}.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="fa fa-cogs" aria-hidden="true"></i></h2>
+            <!--<h2 class="center light-blue-text"><i class="fa fa-cogs" aria-hidden="true"></i></h2>-->
+            <div class="chartdiv" id="chartdiv2"></div>
             <h5 class="center">{{Lang::get("welcome.panel3")}}</h5>
-
             <p class="light">{{Lang::get("welcome.panel3_descr")}}.</p>
           </div>
         </div>
@@ -135,6 +136,14 @@
   {{ HTML::script('js/lib/jquery-3.2.1.min.js') }}
   {{ HTML::script('js/lib/jquery-ui.min.js') }}
   {{ HTML::script('js/lib/materialize.min.js') }}
+  {{ HTML::script('js/lib/react.js') }}
+  {{ HTML::script('js/lib/react-dom.js') }}
+  {{ HTML::script('js/lib/amcharts/amcharts.js') }}
+  {{ HTML::script('js/lib/amcharts/serial.js') }}
+  {{ HTML::script('js/lib/amcharts/gauge.js') }}
+  {{ HTML::script('js/lib/amcharts/plugins/export/export.min.js') }}
+  {{ HTML::script('js/lib/amcharts/themes/light.js') }}
+
   <!--  Scripts-->
   {{ HTML::script('js/adminhome/init.js') }}
   <script src="https://use.fontawesome.com/3461617f50.js"></script>
